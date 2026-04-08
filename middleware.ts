@@ -1,4 +1,10 @@
-export { default } from "next-auth/middleware";
+import { withAuth } from "next-auth/middleware";
+
+export default withAuth({
+  pages: {
+    signIn: "/connexion",
+  },
+});
 
 export const config = {
   matcher: [
@@ -6,6 +12,5 @@ export const config = {
     "/compte/:path*",
     "/commandes/:path*",
     "/checkout/:path*",
-    "/panier/:path*",
   ],
 };
